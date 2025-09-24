@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* whole body */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  background-color: #f4f4f4;
+  width: 100vw;
+}
+
+/* header display */
+header {
+  background-color: #418180;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  height: 100px;
+}
+
+.logo-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.index {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.index img {
+  width: 28px;
+}
+
+.logo {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 58px;
+}
+
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  width: 300px;
+  height: 58px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  font-size: 20px;
+  color: black;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.search-box input::placeholder {
+  text-align: left;
+  padding-left: 95px;
+  color: #a6a6a6;
+}
+
+/* .search-box button {
+      border: none;
+      background: white;
+      border-radius: 50px;
+      cursor: pointer;
+    } */
+
+.nav-actions {
+  display: flex;
+  gap: 20px;
+  color: white;
+  align-items: center;
+}
+
+/* main part display */
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1366px;
+  margin: 0 auto;
+  margin-top: 40px;
+  gap: 60px;
+}
+
+.sidebar {
+  background-color: #f5be5e;
+  padding: 32px 45px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+.sidebar button {
+  background-color: #ffeac5;
+  border: none;
+  /* padding: 10px; */
+  border-radius: 20px;
+  font-size: 18px;
+  width: 330px;
+  height: 48px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #ffcd73;
+}
+
+.map-container {
+  flex: 1;
+  border: 2px solid purple;
+  border-radius: 20;
+  overflow: hidden;
+  width: 700px;
+  height: 520px;
+}
+
+.map-container img {
+  width: 100%;
+  display: block;
+}
+
+/* multiplatform */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sidebar button {
+    flex: 1 1 45%;
+  }
+}
