@@ -85,7 +85,7 @@
                 </ul>
                 
                 <!-- Hamburger menu for mobile -->
-                <button class="hamburger" onclick="toggleMobileNav()">☰</button>
+                <button class="hamburger">☰</button>
             </div>
             
             <!-- Mobile navigation -->
@@ -292,10 +292,26 @@
   </div>
   
   <script>
-    function toggleMobileNav() {
+    document.addEventListener('DOMContentLoaded', function() {
       const mobileNav = document.getElementById('mobileNav');
-      mobileNav.classList.toggle('active');
-    }
+      const hamburger = document.querySelector('.hamburger');
+      
+      // Handle all clicks
+      document.addEventListener('click', function(event) {
+        // If clicking on hamburger button, toggle the menu
+        if (hamburger.contains(event.target)) {
+          mobileNav.classList.toggle('active');
+        }
+        // If clicking on a nav link, close the menu
+        else if (event.target.matches('.mobile-nav a')) {
+          mobileNav.classList.remove('active');
+        }
+        // If clicking outside both hamburger and mobile nav, close the menu
+        else if (!mobileNav.contains(event.target) && !hamburger.contains(event.target)) {
+          mobileNav.classList.remove('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>
